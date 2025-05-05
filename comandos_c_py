@@ -1,0 +1,27 @@
+------------------------- SV and C bridge ---------------------------
+
+To connect SV and C we use the DPI-C API:
+
+See: Bus_scoreboard.sv where the DPI calls are used.
+
+Required VCS command needed to run:
+
+vcs -sverilog -lca -Mupdate -debug_all +vcs+flush+all +warn=all -timescale=1ns/10ps -full64 +incdir+$UVM_HOME/src $UVM_HOME/src/uvm.sv $UVM_HOME/src/dpi/uvm_dpi.cc -CFLAGS -DVCS testbench.sv Scoreboard.c
+
+To simulate:
+
+./simv +UVM_TESTNAME="bus_envio0a1_test"
+
+-------------------- C and Python bridge ---------------------------
+
+To connect C and Python we use the Python/C API (https://docs.python.org/3/extending/embedding.html)
+
+See: 
+
+Required VCS command needed to run:
+
+vcs -sverilog -lca -Mupdate -debug_all +vcs+flush+all +warn=all -timescale=1ns/10ps -full64 +incdir+$UVM_HOME/src $UVM_HOME/src/uvm.sv $UVM_HOME/src/dpi/uvm_dpi.cc -CFLAGS -DVCS testbench.sv Scoreboard.c
+
+To simulate:
+
+./simv +UVM_TESTNAME="bus_envio0a1_test"

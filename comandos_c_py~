@@ -1,0 +1,7 @@
+To connect SV and C we use the DPI-C API:
+
+See: Bus_scoreboard.sv where the DPI calls are used.
+
+Required VCS command needed to run:
+
+
